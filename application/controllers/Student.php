@@ -123,6 +123,8 @@ public function validate_image($image)
                 $data['mark'] = $this->input->post('mark');
                 $data['gender'] = $this->input->post('gender'); 
                 $data['dob'] = $this->input->post('dob');
+                $data['place'] = $this->input->post('place');
+
                 $qualification = $this->input->post('qualification');
                 $qualification_str = implode(', ', $qualification);
                 $data['qualification'] = $qualification_str; // Save the qualifications as a comma-separated string

@@ -18,9 +18,9 @@
     <div class="container" style="background-color:mediumseagreen;">
         <div class="row">
             <div class="col-md-12 mt-4">
-                <div class="card" style="background-color:rgb(200, 200, 200);">
+                <div class="card" style="background-color:rgb(200, 200, 200); height:auto;">
                     <form method="POST" action="<?php echo base_url().'index.php/Student/update/'.$student['id']; ?>"
-                    enctype="multipart/form-data"  style="margin-left:5%;margin-top:5%;">
+                    enctype="multipart/form-data"  style="margin-left:5%;margin-top:2%;">
 
                     <div class="form-group">
                     <h3 class="text-center">Update Student</h3>
@@ -65,6 +65,18 @@
                             <input type="date" class="form-control" name="dob"
                                 value="<?php echo set_value('dob', $student['dob']); ?>">
                         </div>
+                            
+<!-- Add this snippet inside the form -->
+<div class="form-group">
+    <label for="place">Place:</label>
+    <select class="form-control" name="place" required>
+        <option value="select" <?php echo ($student['place'] == 'select') ? 'selected' : ''; ?>>select</option>
+        <option value="kozhikode" <?php echo ($student['place'] == 'kozhikode') ? 'selected' : ''; ?>>Kozhikode</option>
+        <option value="kollam" <?php echo ($student['place'] == 'kollam') ? 'selected' : ''; ?>>Kollam</option>
+        <option value="kasargod" <?php echo ($student['place'] == 'kasargod') ? 'selected' : ''; ?>>Kasargod</option>
+    </select>
+</div>
+
 
                         <div class="form-group">
                             <label>Qualification:</label>
